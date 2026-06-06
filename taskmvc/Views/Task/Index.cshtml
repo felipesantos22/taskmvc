@@ -1,0 +1,38 @@
+﻿@model List<taskmvc.Models.TaskItem>
+
+<h2>Lista de Tarefas - 2026</h2>
+
+<a class="btn btn-primary mb-3" asp-action="Create">Adicionar ...</a>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Finalizada</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var task in Model)
+        {
+            <tr>
+                <td>@task.Id</td>
+                <td>@task.Name</td>
+                <td>@(task.IsDone ? "Sim" : "Não")</td>
+                <td>
+                    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@task.Id">Editar</a>
+                    <form asp-action="Delete"
+                          asp-route-id="@task.Id"
+                          method="post"
+                          style="display:inline;">
+                        <button type="submit" class="btn btn-danger">
+                            Excluir
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
