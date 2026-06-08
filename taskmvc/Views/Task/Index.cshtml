@@ -1,10 +1,11 @@
 ﻿@model List<taskmvc.Models.TaskItem>
 
-<h2>Lista de Tarefas - 2026</h2>
+<h2 class="mt-5">Lista de Tarefas - 2026</h2>
 
-<a class="btn btn-primary mb-3" asp-action="Create">Adicionar ...</a>
+<a class="btn btn-primary mt-5" asp-action="Create">Adicionar Tarefa</a>
 
-<table class="table table-bordered">
+<table class="table text-center mt-5">
+
     <thead>
         <tr>
             <th>Id</th>
@@ -22,12 +23,12 @@
                 <td>@task.Name</td>
                 <td>@(task.IsDone ? "Sim" : "Não")</td>
                 <td>
-                    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@task.Id">Editar</a>
+                    <a class="btn btn-primary" asp-action="Edit" asp-route-id="@task.Id">Editar</a>
                     <form asp-action="Delete"
                           asp-route-id="@task.Id"
                           method="post"
                           style="display:inline;">
-                        <button type="submit" class="btn btn-danger">
+                        <button type="submit" class="btn btn-dark">
                             Excluir
                         </button>
                     </form>
