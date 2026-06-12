@@ -1,0 +1,39 @@
+﻿@model IEnumerable<taskmvc.Models.User>;
+
+@{
+    ViewBag.Title = "Usuarios";
+}
+
+<h2 class="mt-5">Usuarios</h2>
+
+<a class="btn btn-info" asp-area="" asp-action="Create">Criar Usuarios</a>
+
+<table class="table text-center mt-5">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Password</th>
+        </tr>
+    </thead>
+    <tbody class="table-group-divider">
+        @foreach (var user in Model) {
+            <tr>
+                <th scope="row">1</th>
+                <td>@user.Id</td>
+                <td>@user.Name</td>
+                <td>@user.Password</td>
+                <td>
+                   <a class="btn btn-primary" asp-action="UpdateName" asp-route-id="@user.Id">Editar</a>
+                    <form asp-action="Delete"
+                          asp-route-id="@user.Id" 
+                          method="post"
+                          style="display:inline;">
+                        <button type="submit" class="btn btn-dark">
+                            Excluir
+                        </button>
+                    </form>
+            </tr>
+        }
+    </tbody>
+</table>
