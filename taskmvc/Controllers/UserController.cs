@@ -34,11 +34,11 @@ namespace taskmvc.Controllers
             if (!ModelState.IsValid)
             {
                 return View(user);
-                
+
             }
             await _service.Create(user);
             return RedirectToAction(nameof(Index));
-            
+
         }
 
 
@@ -80,6 +80,19 @@ namespace taskmvc.Controllers
             await _service.UpdateName(model.Id, model.Name);
 
             return RedirectToAction(nameof(Index));
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var user = _service.GetById(id);
+            if (user == null)
+                return NotFound();
+
+            await _service.Delete(id);
+
+            return RedirectToAction(nameof(Index));
+
         }
     }
 }

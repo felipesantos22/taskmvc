@@ -18,7 +18,7 @@ public class TaskController : Controller
         var tasks = _service.GetAll();
         return View(tasks);
     }
-
+    
     public IActionResult Create()
     {
         return View();

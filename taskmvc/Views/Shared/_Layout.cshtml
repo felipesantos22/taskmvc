@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/taskmvc.styles.css" asp-append-version="true" />
 </head>
-<body class="bg-opacity-100">
+<body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-primary border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3 navbar-dark header_footer_color">
 
             <div class="container-fluid d-flex justify-content-between">
                 
@@ -25,13 +25,13 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Task" asp-action="Index">Home</a>
+                            <a class="nav-link" asp-area="" asp-controller="Task" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Contact" asp-action="Index">Contato</a>
+                            <a class="nav-link" asp-area="" asp-controller="Contact" asp-action="Index">Contato</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Index">Usuarios</a>
+                            <a class="nav-link" asp-area="" asp-controller="User" asp-action="Index">Usuarios</a>
                         </li>
                     </ul>
                 </div>
@@ -45,7 +45,7 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted bg-primary">
+    <footer class="border-top footer header_footer_color">
         <div class="container">
             &copy; 2026 - Lista de Tarefas - <a asp-area="" asp-controller="Policy" asp-action="Index">Politica de Privacidade</a>
         </div>
